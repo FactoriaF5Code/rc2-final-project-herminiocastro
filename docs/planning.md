@@ -1,0 +1,1 @@
+Quiero crear una aplicacion tipo un CRUD como los que hemos hecho asta ahora en donde pueda añadir articulos de mi coleccion con una foto y una breve descripcion,editar los articulos para poder cambiarle el nombre o la imagen si fuera necesario y eliminar los que ya no tenga,esto es lo que considero basico y prioritario para mi aplicacion ya que la idea es mucho mas grande.
