@@ -1,2 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/xq5TwZF7)
-# rc2-template-proyecto-individual-final
+App "Upside Down world": Gestionar mi colección de Stranger Things
+
+Catálogo : Registrar mis figuras, juegos, accesorios, ropa y más.
+Organización : Crear categorías y poder encontrar los articulos de mi coleccion con imagenes y una breve descrippcion del articulo.
