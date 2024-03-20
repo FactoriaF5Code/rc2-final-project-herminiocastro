@@ -3,4 +3,4 @@ App "Upside Down world": Gestionar mi colección de Stranger Things
 Catálogo : Registrar mis figuras, juegos, accesorios, ropa y más.
 Organización : Crear categorías y poder encontrar los articulos de mi coleccion con imagenes y una breve descrippcion del articulo.
 
-https://miro.com/welcomeonboard/TkdaYndNMFBjUEl5QVFMUzZCMGljaXJFaENqS09KNEkyYkJiR[…]VUklrenwzNDU4NzY0NTc2MTQyMTc5MzUwfDI=?share_link_id=352061592520
+https://app.mural.co/t/personal2568/m/personal2568/1710841856974/e21aef3d13715555b77a39f86f7b38e55318206c?sender=u08685b71ed5a8f53509b3340
