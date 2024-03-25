@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import './Home.css';
+import logo from '../assets/GiftVecna.svg'
 
-const Home = () => {
+export const Home = () => {
   const [seconds, setSeconds] = useState(5);
 
   useEffect(() => {
@@ -19,13 +20,9 @@ const Home = () => {
     <div className="Home">
       <div className="fondo-animado"></div>
       <div className="logo">
-        <img src="../assets/STRANGER-POPS-WORLD-23-3-2024.png" alt="Logo de la aplicación" />
-      </div>
-      <div className="temporizador">
-        {seconds}
+      <img src={logo} alt="logo" className="logo" />
       </div>
     </div>
   );
 };
 
-export default Home;
