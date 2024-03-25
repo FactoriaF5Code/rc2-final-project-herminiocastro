@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Home.css';
-import logo from '../assets/GiftVecna.svg'
+import Gift from '../assets/GiftVecna.svg'
+import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
 
 export const Home = () => {
   const [seconds, setSeconds] = useState(5);
@@ -20,7 +21,8 @@ export const Home = () => {
     <div className="Home">
       <div className="fondo-animado"></div>
       <div className="logo">
-      <img src={logo} alt="logo" className="logo" />
+      <img src={Gift} alt="logo" className="gift" />
+      <img src={Logo} alt="logo" className="logo" />
       </div>
     </div>
   );
