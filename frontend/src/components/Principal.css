@@ -1,0 +1,94 @@
+/* Estilos generales */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Encabezado */
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  header img {
+    max-width: 200px;
+  }
+  
+  /* Buscador */
+  
+  .buscador {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .buscador input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Lista de elementos */
+  
+  .elementos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .elemento {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .elemento img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .elemento h2 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  
+  .elemento p {
+    margin-bottom: 0;
+  }
+  
+  /* Cargando */
+  
+  .cargando {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  /* Pie de página */
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Personaliza estos estilos para adaptar la apariencia de la página */
+  

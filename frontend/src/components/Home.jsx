@@ -19,7 +19,7 @@ const Home = () => {
     <div className="Home">
       <div className="fondo-animado"></div>
       <div className="logo">
-        <img src="./assets/logo.png" alt="Logo de la aplicación" />
+        <img src="../assets/STRANGER-POPS-WORLD-23-3-2024.png" alt="Logo de la aplicación" />
       </div>
       <div className="temporizador">
         {seconds}
