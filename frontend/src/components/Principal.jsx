@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Principal.css";
 
-const Principal = () => {
+export const Principal = () => {
   const [elementos, setElementos] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
   const [cargando, setCargando] = useState(false);
@@ -57,4 +57,4 @@ const Principal = () => {
   );
 };
 
-export default Principal;
+
