@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './Home.css';
-import Gift from '../assets/GiftVecna.svg'
 import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
 
 export const Home = () => {
@@ -18,10 +17,8 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="Home">
-      <div className="fondo-animado"></div>
+    <div className="home">
       <div className="logo">
-      <img src={Gift} alt="logo" className="gift" />
       <img src={Logo} alt="logo" className="logo" />
       </div>
     </div>
