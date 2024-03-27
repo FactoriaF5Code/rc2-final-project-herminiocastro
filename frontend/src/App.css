@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    /*outline: red solid 1px;*/
+}
+
+:root{
+    --main-font-family:"Benguiat";
+    --main-color:#8A0101;
+}
+
+body{
+    font-family: var(--main-font-family);
+}

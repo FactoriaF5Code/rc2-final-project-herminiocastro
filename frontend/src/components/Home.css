@@ -1,0 +1,16 @@
+  .home {
+    background-image: url(../assets/Rectangle303.gif);
+    background-size: cover;
+    height: 100%;
+    position: absolute;
+    outline: 1px red;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  
