@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import "./Principal.css";
+import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
+import Boton1 from '../assets/ImagenFunko.svg'
+import Boton2 from '../assets/ImagenEggos.svg'
 
 export const Principal = () => {
   const [elementos, setElementos] = useState([]);
@@ -28,7 +31,7 @@ export const Principal = () => {
   return (
     <div className="Principal">
       <header>
-        <img src="../assets/STRANGER-POPS-WORLD-23-3-2024.png" alt="Logo" />
+        <img className="LogoPrincipal" src={Logo} alt="Logo" />
       </header>
       <div className="buscador">
         <input type="text" placeholder="Buscar..." />
@@ -47,10 +50,10 @@ export const Principal = () => {
       </div>
       <footer>
         <button>
-          <img src="../assets/pngwing 1.svg" alt="Botón 1" />
+          <img src={Boton1} alt="Botón1" />
         </button>
         <button>
-          <img src="../assets/Health-removebg-preview 1.svg" alt="Botón 2" />
+          <img src={Boton2} alt="Botón2" />
         </button>
       </footer>
     </div>
