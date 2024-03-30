@@ -1,26 +1,21 @@
-import { useState, useEffect } from 'react';
 import './Home.css';
 import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
-  const [seconds, setSeconds] = useState(5);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSeconds(seconds => seconds - 1);
-      if (seconds === 0) {
-        clearInterval(interval);
-        // Redirigir a la siguiente página
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const handleEnterClick = () => {
+    
+    navigate('./Principal');
+  };
+
 
   return (
     <div className="home">
       <div className="logo">
       <img src={Logo} alt="logo" className="logo" />
-      <button className="button-home">ENTER</button>
+      <button className="button-home" onClick={handleEnterClick}>ENTER</button>
       </div>
     </div>
   );

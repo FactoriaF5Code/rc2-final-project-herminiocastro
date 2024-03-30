@@ -3,6 +3,7 @@ import "./Principal.css";
 import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
 import Boton1 from '../assets/ImagenFunko.svg'
 import Boton2 from '../assets/ImagenEggos.svg'
+import datos from '../data/articles.json';
 
 export const Principal = () => {
   const [elementos, setElementos] = useState([]);
@@ -10,16 +11,8 @@ export const Principal = () => {
   const [cargando, setCargando] = useState(false);
 
   useEffect(() => {
-    const obtenerElementos = async () => {
-      setCargando(true);
-      const respuesta = await fetch(`API_URL?pagina=${paginaActual}`);
-      const datos = await respuesta.json();
-      setElementos([...elementos, ...datos.elementos]);
-      setCargando(false);
-    };
-
-    obtenerElementos();
-  }, [paginaActual]);
+    setElementos(datos);
+  }, []);
 
   const manejarScroll = (e) => {
     const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -59,5 +52,6 @@ export const Principal = () => {
     </div>
   );
 };
+
 
 

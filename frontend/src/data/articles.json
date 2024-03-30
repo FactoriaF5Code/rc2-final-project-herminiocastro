@@ -1,0 +1,53 @@
+[
+    {
+      "imagenes": [
+        "URL imagen frontal Eleven con Demogorgon",
+        "URL imagen lateral Eleven con Demogorgon",
+        "URL imagen trasera Eleven con Demogorgon"
+      ],
+      "tipoDeProducto": "POPS",
+      "titulo": "Eleven vs. Demogorgon",
+      "descripcion": "¡Lucha épica! Eleven con poderes telequinéticos se enfrenta al Demogorgon en este Funko Pop. Un clásico para fans de Stranger Things."
+    },
+    {
+      "imagenes": [
+        "URL imagen frontal Dustin con Dart",
+        "URL imagen lateral Dustin con Dart",
+        "URL imagen trasera Dustin con Dart"
+      ],
+      "tipoDeProducto": "POPS",
+      "titulo": "Dustin y su 'mascota' Dart",
+      "descripcion": "La amistad entre Dustin y Dart cobra vida en este adorable Funko Pop. Un guiño a la temporada 2 de la serie."
+    },
+    {
+      "imagenes": [
+        "URL imagen frontal Steve con Scoops Ahoy uniforme",
+        "URL imagen lateral Steve con Scoops Ahoy uniforme",
+        "URL imagen trasera Steve con Scoops Ahoy uniforme"
+      ],
+      "tipoDeProducto": "POPS",
+      "titulo": "Steve 'El Chico del Helado'",
+      "descripcion": "Con su icónico uniforme de Scoops Ahoy, este Funko Pop captura la nostalgia del verano en Hawkins."
+    },
+    { 
+      "imagenes": [
+        "URL imagen frontal Jim Hopper con uniforme de policía", 
+        "URL imagen lateral Jim Hopper con uniforme de policía", 
+        "URL imagen trasera Jim Hopper con uniforme de policía" 
+      ], 
+      "tipoDeProducto": "POPS", 
+      "titulo": "Jefe Hopper al mando", 
+      "descripcion": "El jefe de policía Jim Hopper en acción con su uniforme. Un Funko Pop indispensable para fans de la serie." 
+    },
+    { 
+      "imagenes": [
+        "URL imagen frontal Once con vestido de flores", 
+        "URL imagen lateral Once con vestido de flores", 
+        "URL imagen trasera Once con vestido de flores" 
+      ], 
+      "tipoDeProducto": "POPS", 
+      "titulo": "Once con estilo primaveral", 
+      "descripcion": "Un look diferente de Eleven con vestido de flores en este adorable Funko Pop." 
+    }
+  ]
+  
