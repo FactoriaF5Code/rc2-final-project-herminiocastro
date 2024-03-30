@@ -13,4 +13,23 @@
     
   }
   
+  .button-home {
+    background-color: transparent;
+    height: 150px;
+    color: rgb(250, 1, 1);
+    width: 150px;
+    text-align: center; 
+    
+    font-size: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 42%;
+    margin-top: 100px;
+    border-color: rgb(209, 2, 2);
+  }
   
+  .button-home:hover {
+    background-color: transparent;
+    border-color: red;
+    box-shadow: 0 0 30px 20px red;
+  }

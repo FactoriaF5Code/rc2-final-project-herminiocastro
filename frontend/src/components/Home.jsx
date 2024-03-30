@@ -20,6 +20,7 @@ export const Home = () => {
     <div className="home">
       <div className="logo">
       <img src={Logo} alt="logo" className="logo" />
+      <button className="button-home">ENTER</button>
       </div>
     </div>
   );
