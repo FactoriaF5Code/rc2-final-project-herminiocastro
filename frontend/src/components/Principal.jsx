@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import "./Principal.css";
-import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
-import Boton1 from '../assets/ImagenFunko.svg'
-import Boton2 from '../assets/ImagenEggos.svg'
-import datos from '../data/articles.json';
+import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
+import Boton1 from "../assets/boton1.svg";
+import Boton2 from "../assets/boton2.svg";
+import datos from "../data/articles.json";
 
 export const Principal = () => {
   const [elementos, setElementos] = useState([]);
@@ -33,7 +33,7 @@ export const Principal = () => {
         {elementos.map((elemento, index) => (
           <div className="elemento" key={index}>
             {elemento.imagen && (
-              <img src={elemento.imagen} alt={elemento.titulo} />
+              <img src={elemento.imagen} alt={elemento.titulo} /> 
             )}
             <h2>{elemento.titulo}</h2>
             <p>{elemento.descripcion}</p>
@@ -42,10 +42,10 @@ export const Principal = () => {
         {cargando && <div className="cargando">Cargando...</div>}
       </div>
       <footer>
-        <button>
+        <button className="botonFunko">
           <img src={Boton1} alt="Botón1" />
         </button>
-        <button>
+        <button className="botonEggo">
           <img src={Boton2} alt="Botón2" />
         </button>
       </footer>

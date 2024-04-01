@@ -22,10 +22,9 @@
 
 .elementos {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   overflow-y: scroll;
-  max-height: calc(100vh - 150px);
   padding: 20px;
 }
 
@@ -33,6 +32,10 @@
   background-color: #f8f8f8;
   border-radius: 10px;
   padding: 20px;
+}
+.elemento img {
+  max-width: 100%;  
+  height: auto;
 }
 
 .cargando {
@@ -56,10 +59,16 @@ input {
 footer {
   position: fixed;
   bottom: 0;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer button {
   margin: 0 120px;
   cursor: pointer;
 }
+.botonFunko,.botonEggo {
+  background-color: transparent;
+  border: none;
+}
+
