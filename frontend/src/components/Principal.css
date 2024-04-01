@@ -21,7 +21,38 @@ body {
   border: 5px solid #ffffff;
   background-color: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
+
+.buscador input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  width: calc(100% - 60px);
+  padding: 0 15px;
+  font-size: 16px;
+}
+
+.buscador input::placeholder {
+  color: #a9a9a9;
+  font-style: italic;
+}
+
+
+.buscador::before {
+  color: #a9a9a9;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease-in-out;
+}
+
+.buscador input:focus+ ::before {
+  opacity: 0;
+}
+
 
 .elementos {
   display: grid;
@@ -63,7 +94,10 @@ body {
   color: white;
   width: 100px;
   height: 30px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -75,9 +109,6 @@ body {
   border-radius: 3px;
 }
 
-input {
-  visibility: hidden;
-}
 
 footer {
   position: fixed;
@@ -86,6 +117,7 @@ footer {
   height: 350px;
   width: 100%;
   background: linear-gradient(#a30000, #050000);
+  opacity: 0.9;
 }
 
 footer button {
