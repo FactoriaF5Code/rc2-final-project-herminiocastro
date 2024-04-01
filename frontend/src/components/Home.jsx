@@ -1,5 +1,4 @@
 import './Home.css';
-import Logo from '../assets/STRANGER-POPS-WORLD-23-3-2024.png'
 import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
@@ -14,10 +13,8 @@ export const Home = () => {
   return (
     <div className="home">
       <div className="logo">
-      <img src={Logo} alt="logo" className="logo" />
       <button className="button-home" onClick={handleEnterClick}>ENTER</button>
       </div>
     </div>
   );
 };
-

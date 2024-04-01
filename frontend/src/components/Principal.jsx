@@ -1,14 +1,15 @@
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 import "./Principal.css";
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
 import datos from "../data/articles.json";
+import { Link } from 'react-router-dom';
 
 export const Principal = () => {
   const [elementos, setElementos] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
-  const [cargando, setCargando] = useState(false);
+  const [cargando] = useState(false);
 
   useEffect(() => {
     setElementos(datos);
@@ -31,19 +32,23 @@ export const Principal = () => {
       </div>
       <div className="elementos" onScroll={manejarScroll}>
         {elementos.map((elemento, index) => (
-          <div className="elemento" key={index}>
-            <div className="contenedor-izquierda">
-              {elemento.imagen && (
-                <img className="elementoImg" src={elemento.imagen} alt={elemento.titulo} />
-              )}
-              <div className="categoria">
-                <p>{elemento.categoria}</p>
+          <React.Fragment key={index}>
+            <Link to={`/secundary/${index}`}>
+              <div className="elemento">
+                <div className="contenedor-izquierda">
+                  {elemento.imagen && (
+                    <img className="elementoImg" src={elemento.imagen} alt={elemento.titulo} />
+                  )}
+                  <div className="categoria">
+                    <p>{elemento.categoria}</p>
+                  </div>
+                </div>
+                <div className="titulo">
+                  <h2>{elemento.titulo}</h2>
+                </div>
               </div>
-            </div>
-            <div className="titulo">
-              <h2>{elemento.titulo}</h2>
-            </div>
-          </div>
+            </Link>
+          </React.Fragment>
         ))}
       </div>
       <footer>
