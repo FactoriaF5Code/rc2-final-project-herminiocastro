@@ -1,11 +1,14 @@
-.Principal {
-  background: linear-gradient(#050000, #8A0101);
-  background-size: cover;
-  height: 52rem;
+body {
+  overflow-x: hidden;
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
 }
+
+.Principal {
+  background: linear-gradient(#050000, #a30000);
+  background-size: cover;
+  height: auto;
+}
+
 .LogoPrincipal {
   width: 999px;
 }
@@ -15,7 +18,7 @@
   padding: 10px;
   margin-left: 50px;
   border-radius: 20px;
-  border: 3px solid #ffffff;
+  border: 5px solid #ffffff;
   background-color: transparent;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -23,33 +26,53 @@
 .elementos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  overflow-y: scroll;
-  padding: 20px;
+  gap: 120px;
+  padding: 100px;
+  overflow-y: auto;
+  grid-auto-rows: 35rem;
+  cursor: pointer;
 }
 
 .elemento {
-  background-color: #f8f8f8;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px;
-}
-.elemento img {
-  max-width: 100%;  
-  height: auto;
+  background: linear-gradient(#050000, #a30000);
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.cargando {
+.elementoImg {
+  max-width: 100%;
+  height: 20rem;
+  border-radius: 20px;
+}
+
+.elemento h2 {
+  min-height: 50px;
+  color: #ffffff;
   text-align: center;
-  margin-top: 20px;
+  font-size: 40px;
+}
+
+.categoria {
+  background-color: black;
+  border-radius: 20px;
+  color: white;
+  width: 100px;
+  height: 30px;
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
+  background-color: #060000;
+  border-radius: 3px;
 }
 
 input {
@@ -60,15 +83,18 @@ footer {
   position: fixed;
   bottom: 0;
   display: flex;
-  justify-content: space-between;
+  height: 350px;
+  width: 100%;
+  background: linear-gradient(#a30000, #050000);
 }
 
 footer button {
-  margin: 0 120px;
+  margin: 0 110px;
   cursor: pointer;
 }
-.botonFunko,.botonEggo {
+
+.botonFunko,
+.botonEggo {
   background-color: transparent;
   border: none;
 }
-

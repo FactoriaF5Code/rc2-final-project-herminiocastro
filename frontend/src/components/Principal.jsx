@@ -32,14 +32,19 @@ export const Principal = () => {
       <div className="elementos" onScroll={manejarScroll}>
         {elementos.map((elemento, index) => (
           <div className="elemento" key={index}>
-            {elemento.imagen && (
-              <img src={elemento.imagen} alt={elemento.titulo} /> 
-            )}
-            <h2>{elemento.titulo}</h2>
-            <p>{elemento.descripcion}</p>
+            <div className="contenedor-izquierda">
+              {elemento.imagen && (
+                <img className="elementoImg" src={elemento.imagen} alt={elemento.titulo} />
+              )}
+              <div className="categoria">
+                <p>{elemento.categoria}</p>
+              </div>
+            </div>
+            <div className="titulo">
+              <h2>{elemento.titulo}</h2>
+            </div>
           </div>
         ))}
-        {cargando && <div className="cargando">Cargando...</div>}
       </div>
       <footer>
         <button className="botonFunko">
@@ -52,6 +57,7 @@ export const Principal = () => {
     </div>
   );
 };
+
 
 
 
