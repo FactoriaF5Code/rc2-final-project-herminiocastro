@@ -3,57 +3,41 @@ import { Link } from 'react-router-dom';
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
-import HomeImg  from '../assets/HomeImg.png';
+import HomeImg from '../assets/HomeImg.png';
 
 export const Secundary = ({ index }) => {
-
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
       try {
-        const response = await fetch('../data/articles.json');
+        const response = await fetch('../data/articles2.json');
         if (!response.ok) {
           throw new Error('Error al cargar los datos');
         }
         const articles = await response.json();
         setData(articles[index]);
       } catch (err) {
-        setError('Error al cargar los datos. Intenta nuevamente.');
         console.error(err);
-      } finally {
-        setIsLoading(false);
       }
     };
-    fetchData(); 
+    fetchData();
   }, [index]);
 
-  if (isLoading) {
-    return <p>Cargando...</p>;
-  }
+  const handlePrevImage = () => {
+    setCurrentImage(prev => (prev === 0 ? data.images.length - 1 : prev - 1));
+  };
 
-  if (error) {
-    return <p>{error}</p>;
-  }
+  const handleNextImage = () => {
+    setCurrentImage(prev => (prev === data.images.length - 1 ? 0 : prev + 1));
+  };
 
   if (!data) {
     return <p>No hay datos disponibles para este producto.</p>;
   }
 
   const { images, title, description } = data;
-
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const handlePrevImage = () => {
-    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const handleNextImage = () => {
-    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
 
   return (
     <div className="secundary">
@@ -85,6 +69,7 @@ export const Secundary = ({ index }) => {
     </div>
   );
 };
+
 
 
 
