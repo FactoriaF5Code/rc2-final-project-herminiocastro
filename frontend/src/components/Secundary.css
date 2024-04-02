@@ -1,4 +1,4 @@
-/* .secundary {
+.secundary {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -84,4 +84,4 @@
   
   footer {
     background: linear-gradient(#a30000, #0500);
-  } */
+  }
