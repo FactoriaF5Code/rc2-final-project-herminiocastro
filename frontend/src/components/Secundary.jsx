@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
-import HomeImg from '../assets/HomeImg.png';
+import HomeImg  from '../assets/HomeImg.png';
 
 export const Secundary = ({ index }) => {
   const [data, setData] = useState(null);
@@ -69,6 +70,11 @@ export const Secundary = ({ index }) => {
     </div>
   );
 };
+
+Secundary.propTypes = {
+  index: PropTypes.number.isRequired,
+};
+
 
 
 

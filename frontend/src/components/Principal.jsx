@@ -33,7 +33,7 @@ export const Principal = () => {
       <div className="elementos" onScroll={manejarScroll}>
         {elementos.map((elemento, index) => (
           <React.Fragment key={index}>
-            <Link to={`/secundary/${index}`}>
+           <Link to={`/secundary/${index}`} key={index}>
               <div className="elemento">
                 <div className="contenedor-izquierda">
                   {elemento.imagen && (
