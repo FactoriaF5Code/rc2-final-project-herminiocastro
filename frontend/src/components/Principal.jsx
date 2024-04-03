@@ -1,10 +1,11 @@
-import React,{ useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./Principal.css";
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
-import datos from "../data/articles.json";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import axios from 'axios';
+
 
 export const Principal = () => {
   const [elementos, setElementos] = useState([]);
@@ -12,8 +13,20 @@ export const Principal = () => {
   const [cargando] = useState(false);
 
   useEffect(() => {
-    setElementos(datos);
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/api/articulos/');
+        // La respuesta de axios ya es el objeto de datos, no necesitas response.json()
+        console.log(response.data); // Aquí puedes ver los datos devueltos
+        setElementos(response.data);
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      }
+    };
+
+    fetchData(); // Llama a la función fetchData para obtener los datos
+  }, []); // El segundo argumento de useEffect asegura que este efecto solo se ejecute una vez, similar a componentDidMount
+
 
   const manejarScroll = (e) => {
     const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -25,7 +38,7 @@ export const Principal = () => {
   return (
     <div className="Principal">
       <header>
-        <img  src={Logo} alt="Logo" className="Logo"/>
+        <img src={Logo} alt="Logo" className="Logo" />
       </header>
       <div className="buscador">
         <input type="text" placeholder="Buscar..." />
@@ -33,11 +46,15 @@ export const Principal = () => {
       <div className="elementos" onScroll={manejarScroll}>
         {elementos.map((elemento, index) => (
           <React.Fragment key={index}>
-           <Link to={`/secundary/${index}`} key={index}>
+            <Link to={`/secundary/${index}`} key={index}>
               <div className="elemento">
                 <div className="contenedor-izquierda">
                   {elemento.imagen && (
-                    <img className="elementoImg" src={elemento.imagen} alt={elemento.titulo} />
+                    <img
+                      className="elementoImg"
+                      src={elemento.imagen.slice(0, 1)[0]}
+                      alt={elemento.titulo}
+                    />
                   )}
                   <div className="categoria">
                     <p>{elemento.categoria}</p>
@@ -62,7 +79,3 @@ export const Principal = () => {
     </div>
   );
 };
-
-
-
-

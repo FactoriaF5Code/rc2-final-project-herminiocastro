@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import "./Secundary.css"
+import "./Secundary.css";
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
@@ -10,27 +10,21 @@ import HomeImg  from '../assets/HomeImg.png';
 import datos from "../data/articles.json";
 
 export const Secundary = ({ index }) => { 
-  const [datosProducto, setDatosProducto] = useState(null);
-  const [imagenActual, setImagenActual] = useState(0);
+  console.log('El indice es: ' + index);
+  const [tituloProducto, setTituloProducto] = useState(0);
+  const [descripcionProducto, setDescripcionProducto] = useState(0);
+  const [imagenesProducto, setImagenesProducto] = useState([]);
 
   useEffect(() => {
     const articulos = datos;
-    setDatosProducto(articulos[index]);
-  }, [index]);
+    setTituloProducto(articulos[0].titulo);
+    setDescripcionProducto(articulos[0].descripcion);
+    setImagenesProducto(articulos[0].imagenes);
+  }, [0]);
 
-  const manejarImagenAnterior = () => {
-    setImagenActual(prev => (prev === 0 ? datosProducto.imagenes.length - 1 : prev - 1));
-  };
-
-  const manejarSiguienteImagen = () => {
-    setImagenActual(prev => (prev === datosProducto.imagenes.length - 1 ? 0 : prev + 1));
-  };
-
-  if (!datosProducto) {
+  if (imagenesProducto != undefined && !imagenesProducto.length) {
     return <p>No hay datos disponibles para este producto.</p>;
   }
-
-  const { imagen, titulo, descripcion } = datosProducto;
 
   return (
     <div className="secundario">
@@ -39,20 +33,16 @@ export const Secundary = ({ index }) => {
       </header>
       <section className="detalles-producto">
         <div className="contenedor-imagenes">
-          <button className="imagen-anterior" onClick={manejarImagenAnterior}>
-            <i className="flecha-izquierda"></i>
-          </button>
-          <img src={imagen[imagenActual]} alt="Producto" className="imagen-producto" />
-          <button className="imagen-siguiente" onClick={manejarSiguienteImagen}>
-            <i className="flecha-derecha"></i>
-          </button>
+          {imagenesProducto.map((imagen, indice) => (
+            <img key={indice} src={imagen} alt="Producto" className="imagen-producto" />
+          ))}
         </div>
         <div className="botones">
           <Link to="/editar" className="boton-editar">Editar</Link>
           <Link to="/" className="boton-eliminar">Eliminar</Link>
         </div>
-        <h1>{titulo}</h1>
-        <p>{descripcion}</p>
+        <h1>{tituloProducto}</h1>
+        <p>{descripcionProducto}</p>
       </section>
       <footer>
         <Link to="/"><img src={Boton1} alt="Buscar" /></Link>
