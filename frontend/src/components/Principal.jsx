@@ -25,7 +25,7 @@ export const Principal = () => {
   return (
     <div className="Principal">
       <header>
-        <img className="LogoPrincipal" src={Logo} alt="Logo" />
+        <img  src={Logo} alt="Logo" className="Logo"/>
       </header>
       <div className="buscador">
         <input type="text" placeholder="Buscar..." />

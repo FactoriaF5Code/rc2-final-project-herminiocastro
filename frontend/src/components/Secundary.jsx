@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import "./Secundary.css"
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
@@ -6,39 +7,30 @@ import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
 import HomeImg  from '../assets/HomeImg.png';
 
-export const DetallesProducto = ({ indice }) => { 
-  const [datos, setDatos] = useState(null);
+import datos from "../data/articles.json";
+
+export const Secundary = ({ index }) => { 
+  const [datosProducto, setDatosProducto] = useState(null);
   const [imagenActual, setImagenActual] = useState(0);
 
   useEffect(() => {
-    const obtenerDatos = async () => {
-      try {
-        const respuesta = await fetch('../data/articles2.json');
-        if (!respuesta.ok) {
-          throw new Error('Error al cargar los datos');
-        }
-        const articulos = await respuesta.json();
-        setDatos(articulos[indice]);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    obtenerDatos();
-  }, [indice]);
+    const articulos = datos;
+    setDatosProducto(articulos[index]);
+  }, [index]);
 
   const manejarImagenAnterior = () => {
-    setImagenActual(prev => (prev === 0 ? datos.imagenes.length - 1 : prev - 1));
+    setImagenActual(prev => (prev === 0 ? datosProducto.imagenes.length - 1 : prev - 1));
   };
 
   const manejarSiguienteImagen = () => {
-    setImagenActual(prev => (prev === datos.imagenes.length - 1 ? 0 : prev + 1));
+    setImagenActual(prev => (prev === datosProducto.imagenes.length - 1 ? 0 : prev + 1));
   };
 
-  if (!datos) {
+  if (!datosProducto) {
     return <p>No hay datos disponibles para este producto.</p>;
   }
 
-  const { imagenes, titulo, descripcion } = datos;
+  const { imagen, titulo, descripcion } = datosProducto;
 
   return (
     <div className="secundario">
@@ -50,7 +42,7 @@ export const DetallesProducto = ({ indice }) => {
           <button className="imagen-anterior" onClick={manejarImagenAnterior}>
             <i className="flecha-izquierda"></i>
           </button>
-          <img src={imagenes[imagenActual]} alt="Producto" className="imagen-producto" />
+          <img src={imagen[imagenActual]} alt="Producto" className="imagen-producto" />
           <button className="imagen-siguiente" onClick={manejarSiguienteImagen}>
             <i className="flecha-derecha"></i>
           </button>
@@ -71,8 +63,8 @@ export const DetallesProducto = ({ indice }) => {
   );
 };
 
-DetallesProducto.propTypes = {
-  indice: PropTypes.number.isRequired,
+Secundary.propTypes = {
+  index: PropTypes.number.isRequired,
 };
 
 

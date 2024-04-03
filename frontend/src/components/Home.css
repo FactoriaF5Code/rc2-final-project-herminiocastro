@@ -2,29 +2,28 @@
     background-image: url(../assets/Rectangle303.gif);
     background-size: cover;
     height: 100%;
+    width: 100%;
     position: absolute;
-    outline: 1px red;
-    margin: 0;
-    padding: 0;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  
+
+  .logo {
+    padding-top: 40vh;
+    padding-left: 3vh;
+  }
+
   .button-home {
     background-color: transparent;
-    height: 150px;
+    height: 200px;
     color: rgb(250, 1, 1);
-    width: 150px;
+    width: 200px;
     text-align: center; 
-    
     font-size: 30px;
     border-radius: 50%;
     cursor: pointer;
-    margin-left: 42%;
-    margin-top: 100px;
     border-color: rgb(209, 2, 2);
+    margin-left: 420px;
+    margin-top: 100px;
   }
   
   .button-home:hover {
