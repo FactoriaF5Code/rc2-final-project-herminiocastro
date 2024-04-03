@@ -6,74 +6,75 @@ import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
 import HomeImg  from '../assets/HomeImg.png';
 
-export const Secundary = ({ index }) => {
-  const [data, setData] = useState(null);
-  const [currentImage, setCurrentImage] = useState(0);
+export const DetallesProducto = ({ indice }) => { 
+  const [datos, setDatos] = useState(null);
+  const [imagenActual, setImagenActual] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const obtenerDatos = async () => {
       try {
-        const response = await fetch('../data/articles2.json');
-        if (!response.ok) {
+        const respuesta = await fetch('../data/articles2.json');
+        if (!respuesta.ok) {
           throw new Error('Error al cargar los datos');
         }
-        const articles = await response.json();
-        setData(articles[index]);
+        const articulos = await respuesta.json();
+        setDatos(articulos[indice]);
       } catch (err) {
         console.error(err);
       }
     };
-    fetchData();
-  }, [index]);
+    obtenerDatos();
+  }, [indice]);
 
-  const handlePrevImage = () => {
-    setCurrentImage(prev => (prev === 0 ? data.images.length - 1 : prev - 1));
+  const manejarImagenAnterior = () => {
+    setImagenActual(prev => (prev === 0 ? datos.imagenes.length - 1 : prev - 1));
   };
 
-  const handleNextImage = () => {
-    setCurrentImage(prev => (prev === data.images.length - 1 ? 0 : prev + 1));
+  const manejarSiguienteImagen = () => {
+    setImagenActual(prev => (prev === datos.imagenes.length - 1 ? 0 : prev + 1));
   };
 
-  if (!data) {
+  if (!datos) {
     return <p>No hay datos disponibles para este producto.</p>;
   }
 
-  const { images, title, description } = data;
+  const { imagenes, titulo, descripcion } = datos;
 
   return (
-    <div className="secundary">
+    <div className="secundario">
       <header>
         <img src={Logo} alt="Logo" className="logo" />
       </header>
-      <section className="product-details">
-        <div className="images-container">
-          <button className="prev-image" onClick={handlePrevImage}>
-            <i className="arrow-left"></i>
+      <section className="detalles-producto">
+        <div className="contenedor-imagenes">
+          <button className="imagen-anterior" onClick={manejarImagenAnterior}>
+            <i className="flecha-izquierda"></i>
           </button>
-          <img src={images[currentImage]} alt="Producto" className="product-image" />
-          <button className="next-image" onClick={handleNextImage}>
-            <i className="arrow-right"></i>
+          <img src={imagenes[imagenActual]} alt="Producto" className="imagen-producto" />
+          <button className="imagen-siguiente" onClick={manejarSiguienteImagen}>
+            <i className="flecha-derecha"></i>
           </button>
         </div>
-        <div className="buttons">
-          <Link to="/editar" className="edit-button">Editar</Link>
-          <Link to="/" className="delete-button">Eliminar</Link>
+        <div className="botones">
+          <Link to="/editar" className="boton-editar">Editar</Link>
+          <Link to="/" className="boton-eliminar">Eliminar</Link>
         </div>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <h1>{titulo}</h1>
+        <p>{descripcion}</p>
       </section>
       <footer>
-        <Link to="/"><img src={Boton1} alt="Search" /></Link>
-        <Link to="/"><img src={HomeImg} alt="HomeImg" /></Link>
-        <Link to="/"><img src={Boton2} alt="Profile" /></Link>
+        <Link to="/"><img src={Boton1} alt="Buscar" /></Link>
+        <Link to="/"><img src={HomeImg} alt="Inicio" /></Link>
+        <Link to="/"><img src={Boton2} alt="Perfil" /></Link>
       </footer>
     </div>
   );
 };
 
-Secundary.propTypes = {
-  index: PropTypes.number.isRequired,
+DetallesProducto.propTypes = {
+  indice: PropTypes.number.isRequired,
 };
+
 
 
 
