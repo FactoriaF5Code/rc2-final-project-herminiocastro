@@ -11,12 +11,10 @@ export const Home = () => {
 
   return (
     <div className="home">
-      <div className="logo">
-        <img src={Logo} alt="Stranger Pops World" />
-        <button className="button-home" onClick={handleEnterClick}>
+        <img id="stranger-things-title-image" src={Logo} alt="Stranger Pops World" />
+        <button className="enter-button" onClick={handleEnterClick}>
           ENTER
         </button>
-      </div>
     </div>
   );
 };
