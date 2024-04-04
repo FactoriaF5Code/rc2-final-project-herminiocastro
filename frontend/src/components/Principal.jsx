@@ -4,8 +4,7 @@ import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
 import { Link } from "react-router-dom";
-import axios from 'axios';
-
+import axios from "axios";
 
 export const Principal = () => {
   const [elementos, setElementos] = useState([]);
@@ -15,18 +14,19 @@ export const Principal = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/articulos/');
-        // La respuesta de axios ya es el objeto de datos, no necesitas response.json()
-        console.log(response.data); // Aquí puedes ver los datos devueltos
+        const response = await axios.get(
+          "http://localhost:8080/api/articulos/"
+        );
+
+        console.log(response.data);
         setElementos(response.data);
       } catch (error) {
-        console.error('Error al obtener datos:', error);
+        console.error("Error al obtener datos:", error);
       }
     };
 
-    fetchData(); // Llama a la función fetchData para obtener los datos
-  }, []); // El segundo argumento de useEffect asegura que este efecto solo se ejecute una vez, similar a componentDidMount
-
+    fetchData();
+  }, []);
 
   const manejarScroll = (e) => {
     const { scrollTop, scrollHeight, clientHeight } = e.target;
