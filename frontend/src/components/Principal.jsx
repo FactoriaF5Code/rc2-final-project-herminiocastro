@@ -39,10 +39,9 @@ export const Principal = () => {
     <div className="Principal">
       <header>
         <img src={Logo} alt="Logo" className="Logo" />
+        <input className="buscador" type="text" placeholder="Buscar..." />
       </header>
-      <div className="buscador">
-        <input type="text" placeholder="Buscar..." />
-      </div>
+      
       <div className="elementos" onScroll={manejarScroll}>
         {elementos.map((elemento, index) => (
           <React.Fragment key={index}>
