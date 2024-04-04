@@ -26,3 +26,8 @@
     cursor: pointer;
     border-color: rgb(209, 2, 2);
   }
+
+  .enter-button:hover {
+    box-shadow: 0 0 15px 20px rgba(209, 2, 2, 0.7);
+    transition: box-shadow 0.3s ease-in-out;
+  }
