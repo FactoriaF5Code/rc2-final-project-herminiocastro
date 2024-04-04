@@ -1,33 +1,28 @@
   .home {
     background-image: url(../assets/Rectangle303.gif);
     background-size: cover;
-    height: 100%;
     width: 100%;
-    position: absolute;
+    height: 100vh;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 20px;
   }
 
-  .logo {
-    padding-top: 40vh;
-    padding-left: 3vh;
+  #stranger-things-title-image {
+    width: 100%;
   }
 
-  .button-home {
+  .enter-button {
     background-color: transparent;
-    height: 200px;
+    height: 8em;
+    width: 8em;
     color: rgb(250, 1, 1);
-    width: 200px;
     text-align: center; 
-    font-size: 30px;
+    
     border-radius: 50%;
     cursor: pointer;
     border-color: rgb(209, 2, 2);
-    margin-left: 420px;
-    margin-top: 100px;
-  }
-  
-  .button-home:hover {
-    background-color: transparent;
-    border-color: red;
-    box-shadow: 0 0 30px 20px red;
   }
