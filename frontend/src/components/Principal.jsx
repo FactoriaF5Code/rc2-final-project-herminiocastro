@@ -10,7 +10,7 @@ export const Principal = () => {
   const [elementos, setElementos] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
   const [cargando] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(''); 
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,44 +40,52 @@ export const Principal = () => {
     <div className="Principal">
       <header>
         <img src={Logo} alt="Logo" className="Logo" />
-        <input 
-            className="buscador" 
-            type="text" 
-            placeholder="Buscar..." 
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-         />
+        <input
+          className="buscador"
+          type="text"
+          placeholder="Buscar..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </header>
-      
+
       <div className="elementos" onScroll={manejarScroll}>
         {elementos
-            .filter((elemento) =>
-                (elemento.titulo && elemento.titulo.toLowerCase().includes(searchTerm.toLowerCase())) ||
-                (elemento.categoria && elemento.categoria.toLowerCase().includes(searchTerm.toLowerCase())) 
-            )
-            .map((elemento, index) => (
-              <React.Fragment key={index}>
-                <Link to={`/secundary/${index}`} key={index}>
-                  <div className="elemento">
-                    <div className="contenedor-izquierda">
-                      {elemento.imagen && (
-                        <img
-                          className="elementoImg"
-                          src={elemento.imagen.slice(0, 1)[0]}
-                          alt={elemento.titulo}
-                        />
-                      )}
-                      <div className="categoria">
-                        <p>{elemento.categoria}</p>
-                      </div>
-                    </div>
-                    <div className="titulo">
-                      <h2>{elemento.titulo?.toLowerCase() || 'Título no disponible'}</h2>
-                    </div>
+          .filter(
+            (elemento) =>
+              (elemento.titulo &&
+                elemento.titulo
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase())) ||
+              (elemento.categoria &&
+                elemento.categoria
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase()))
+          )
+          .map((elemento, index) => (
+            <React.Fragment key={index}>
+              <Link to={`/secundary/${index}`} key={index}>
+                <div className="elemento">
+                  {elemento.imagen && (
+                    <img
+                      className="elementoImg"
+                      src={elemento.imagen.slice(0, 1)[0]}
+                      alt={elemento.titulo}
+                    />
+                  )}
+                  <div className="categoria">
+                    <p>{elemento.categoria}</p>
                   </div>
-                </Link>
-              </React.Fragment>
-            ))}
+
+                  <div className="titulo">
+                    <h2>
+                      {elemento.titulo?.toLowerCase() || "Título no disponible"}
+                    </h2>
+                  </div>
+                </div>
+              </Link>
+            </React.Fragment>
+          ))}
       </div>
       <footer>
         <button className="botonFunko">
@@ -90,4 +98,3 @@ export const Principal = () => {
     </div>
   );
 };
-
