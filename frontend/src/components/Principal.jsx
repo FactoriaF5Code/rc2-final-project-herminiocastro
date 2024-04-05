@@ -11,6 +11,7 @@ export const Principal = () => {
   const [paginaActual, setPaginaActual] = useState(1);
   const [cargando] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [categoriaActual, setCategoriaActual] = useState("Pops"); // Por defecto mostrará la categoría "Pops"
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,6 +37,14 @@ export const Principal = () => {
     }
   };
 
+  const filtrarElementosPorCategoria = (categoria) => {
+    return elementos.filter(
+      (elemento) =>
+        elemento.categoria &&
+        elemento.categoria.toLowerCase() === categoria.toLowerCase()
+    );
+  };
+
   return (
     <div className="Principal">
       <header>
@@ -50,7 +59,7 @@ export const Principal = () => {
       </header>
 
       <div className="elementos" onScroll={manejarScroll}>
-        {elementos
+        {filtrarElementosPorCategoria(categoriaActual)
           .filter(
             (elemento) =>
               (elemento.titulo &&
@@ -69,8 +78,7 @@ export const Principal = () => {
                   {elemento.imagen && (
                     <img
                       className="elementoImg"
-                      src={elemento.imagen.slice(0, 1)[0]}
-                      alt={elemento.titulo}
+                      src={elemento.imagen}
                     />
                   )}
                   <div className="categoria">
@@ -88,10 +96,16 @@ export const Principal = () => {
           ))}
       </div>
       <footer>
-        <button className="botonFunko">
+        <button
+          className="botonFunko"
+          onClick={() => setCategoriaActual("POPS")}
+        >
           <img src={Boton1} alt="Botón1" />
         </button>
-        <button className="botonEggo">
+        <button
+          className="botonEggo"
+          onClick={() => setCategoriaActual("VARIOS")}
+        >
           <img src={Boton2} alt="Botón2" />
         </button>
       </footer>
