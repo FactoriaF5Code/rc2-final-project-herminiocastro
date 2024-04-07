@@ -25,3 +25,42 @@ npm run dev
 cd backend 
 mvn spring-boot:run 
 ```
+
+Docker instalado: https://docs.docker.com/engine/install/
+DBeaver instalado: https://dbeaver.io/download/
+Pasos:
+
+1. Iniciar la base de datos con Docker:
+
+Comando Docker:
+docker run -it --rm -p 5432:5432 postgres:latest
+Explicación:
+
+-it: Inicia el contenedor en modo interactivo.
+--rm: Elimina el contenedor al cerrarlo.
+-p 5432:5432: Exporta el puerto 5432 del contenedor al puerto 5432 del host.
+postgres:latest: Imagen de PostgreSQL a utilizar.
+
+2. Conectarse a la base de datos con DBeaver:
+
+Abrir DBeaver:
+
+Inicie DBeaver.
+Crear nueva conexión:
+
+Seleccione "MySQL" como tipo de base de datos.
+Introduzca la siguiente información:
+Host: localhost
+Puerto: 5432
+Base de datos: postgres
+Usuario: postgres
+Contraseña: postgres
+Haga clic en "Probar conexión" para verificar la conexión.
+Haga clic en "Aceptar" para guardar la conexión.
+
+3. Crear las tablas:
+
+Abrir la base de datos:
+
+En el panel izquierdo de DBeaver, expanda la conexión "postgres".
+Haga doble clic en la base de datos "postgres".
