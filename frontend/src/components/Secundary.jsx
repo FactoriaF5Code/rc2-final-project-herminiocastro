@@ -37,7 +37,7 @@ export const Secundary = () => {
           <img src={elemento.imagen} className="elementoImagen" />
         )}
       </div>
-        <div className="categoria">
+        <div className="categoriaSecond">
           <p>{elemento.categoria}</p>
         </div>
 
