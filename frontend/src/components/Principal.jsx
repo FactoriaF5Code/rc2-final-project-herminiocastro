@@ -84,12 +84,9 @@ export const Principal = () => {
                   <div className="categoria">
                     <p>{elemento.categoria}</p>
                   </div>
-
-                  <div className="titulo">
-                    <h2>
+                    <h2 className="titulo">
                       {elemento.titulo?.toLowerCase() || "Título no disponible"}
                     </h2>
-                  </div>
                 </div>
               </Link>
             </React.Fragment>

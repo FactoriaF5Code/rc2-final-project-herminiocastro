@@ -8,16 +8,16 @@ import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 export const Secundary = () => {
-  const [articulo, setArticulo] = useState([]);
+  const [elemento, setelemento] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/articulos/${id}`
+          `http://localhost:8080/api/elementos/${id}`
         );
-        setArticulo(response.data);
+        setelemento(response.data);
       } catch (error) {
         console.error("Error al obtener datos:", error);
       }
@@ -32,20 +32,20 @@ export const Secundary = () => {
         <img src={Logo} alt="Logo" className="Logo" />
       </header>
 
-      <div className="articulo">
-        {articulo.imagen && (
-          <img src={articulo.imagen} className="articuloImagen" />
+      <div className="elemento">
+        {elemento.imagen && (
+          <img src={elemento.imagen} className="elementoImagen" />
         )}
         <div className="categoria">
-          <p>{articulo.categoria}</p>
+          <p>{elemento.categoria}</p>
         </div>
 
         <div className="titulo">
-          <h2>{articulo.titulo}</h2>
+          <h2>{elemento.titulo}</h2>
         </div>
 
         <div className="descripcion">
-          <p>{articulo.descripcion}</p>
+          <p>{elemento.descripcion}</p>
         </div>
       </div>
 
