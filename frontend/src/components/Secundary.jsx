@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 
 export const Secundary = () => {
   const [elemento, setelemento] = useState([]);
-  const { id } = useParams();
+  const { index } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/api/elementos/${id}`
+          `http://localhost:8080/api/articulos/${index}`
         );
         setelemento(response.data);
       } catch (error) {
@@ -24,7 +24,7 @@ export const Secundary = () => {
     };
 
     fetchData();
-  }, [id]);
+  }, [index]);
 
   return (
     <div className="Secundary">
@@ -36,19 +36,18 @@ export const Secundary = () => {
         {elemento.imagen && (
           <img src={elemento.imagen} className="elementoImagen" />
         )}
+      </div>
         <div className="categoria">
           <p>{elemento.categoria}</p>
         </div>
 
-        <div className="titulo">
+        <div className="tituloSecond">
           <h2>{elemento.titulo}</h2>
         </div>
 
         <div className="descripcion">
           <p>{elemento.descripcion}</p>
         </div>
-      </div>
-
       <div className="botonVolver">
         <Link to="/Principal/*">
           <img src={BotonVolver} alt="Botón Volver" />
