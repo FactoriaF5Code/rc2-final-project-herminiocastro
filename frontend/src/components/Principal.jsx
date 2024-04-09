@@ -97,13 +97,13 @@ export const Principal = () => {
           className="botonFunko"
           onClick={() => setCategoriaActual("POPS")}
         >
-          <img src={Boton1} alt="Botón1" />
+          <img src={Boton1} alt="Botón1" title="POPS" />
         </button>
         <button
           className="botonEggo"
           onClick={() => setCategoriaActual("VARIOS")}
         >
-          <img src={Boton2} alt="Botón2" />
+          <img src={Boton2} alt="Botón2" title="VARIOS" />
         </button>
       </footer>
     </div>

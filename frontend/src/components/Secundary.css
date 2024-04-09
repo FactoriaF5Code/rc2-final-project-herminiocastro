@@ -43,9 +43,10 @@
 
 .descripcion {
   color: white;
-  margin-top: 2em;
+  
   text-align: center;
   font-size: 1.5em;
+  margin: 2em 1em 0 1em;
 }
 
 
