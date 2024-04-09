@@ -18,7 +18,7 @@
 
 .categoriaSecond {
   background-color: black;
-  border-radius: 20px;
+  border-radius: 12.5em;
   color: white;
   width: 6em;
   height: 1.5em;
@@ -30,7 +30,7 @@
   background: linear-gradient(#050000, #666666);
   font-family: sans-serif;
   margin-top: 1em;
-  padding-top: 2px;
+  padding-top: 0.12em;
 }
 
 .tituloSecond {
@@ -50,7 +50,7 @@
 
 
 .botonVolver img {
-  width: 200px;
+  width: 12.5em;
   cursor: pointer;
   margin-top: 2em;
 }
@@ -64,7 +64,7 @@
 .elementoSecond {
   width: 25em;
   height: 18em;
-  border-radius: 15px;
-  margin-bottom: 8px;
+  border-radius: 0.9em;
+  margin-bottom: 0.5em;
   margin-top: -1em;
 }
