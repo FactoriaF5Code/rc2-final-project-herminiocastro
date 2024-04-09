@@ -32,9 +32,9 @@ export const Secundary = () => {
         <img src={Logo} alt="Logo" className="Logo" />
       </header>
 
-      <div className="elemento">
+      <div className="elementoSecond">
         {elemento.imagen && (
-          <img src={elemento.imagen} className="elementoImagen" />
+          <img src={elemento.imagen} className="elementoSecondImagen" />
         )}
       </div>
         <div className="categoriaSecond">
