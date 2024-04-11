@@ -1,0 +1,33 @@
+  .home {
+    background-image: url(../assets/Rectangle303.gif);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 20px;
+  }
+
+  #stranger-things-title-image {
+    width: 100%;
+  }
+
+  .enter-button {
+    background-color: transparent;
+    height: 8em;
+    width: 8em;
+    color: rgb(250, 1, 1);
+    text-align: center; 
+    
+    border-radius: 50%;
+    cursor: pointer;
+    border-color: rgb(209, 2, 2);
+  }
+
+  .enter-button:hover {
+    box-shadow: 0 0 15px 20px rgba(209, 2, 2, 0.7);
+    transition: box-shadow 0.3s ease-in-out;
+  }

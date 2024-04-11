@@ -1,0 +1,123 @@
+header {
+  text-align: center;
+}
+
+header img.Logo {
+  width: 100%;
+}
+
+header input {
+  width: 80%;
+  border-color: #ffffff;
+  border-radius: 1.25em;
+  background-color: transparent;
+  padding: 0 1.6em;
+  font-size: 1.13em;
+  color: #ffffff;
+}
+
+
+@font-face {
+  font-family: "Benguiat";
+  src: url("/frontend//src//assets/fonts/Benguiat\ Bold.ttf") format("truetype");
+}
+
+
+.Principal {
+  background: linear-gradient(#050000, #a30000);
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+}
+
+
+.elementos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1.25em;
+  cursor: pointer;
+  margin-bottom: 2em;
+  gap: 1em;
+}
+
+.elemento {
+  border-radius: 1.25em;
+  background: linear-gradient(#050000, #a30000);
+  border: 0.15em solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 16em;
+  margin-top: 1em;
+}
+
+.elementoImg {
+  width: 98%; 
+  height: 15em; 
+  border-radius: 0.9em;
+  object-fit: cover;
+  margin-bottom: 0.9em;
+  margin-top: 0.3em;
+}
+
+
+.titulo {
+  color: #ffffff;
+  font-family: 'Benguiat';
+  font-size: 1.5em;
+  text-align: center;
+  height: 5em;
+  margin-top: 1em;
+  padding: 0em 0.1em 0.2em 0.1em;
+}
+
+.categoria {
+  background-color: black;
+  border-radius: 1.25em;
+  color: white;
+  width: 6em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4em;
+  background: linear-gradient(#050000, #666666);
+  font-family: sans-serif;
+  padding-top: 0.13em;
+}
+
+::-webkit-scrollbar {
+  width: 0.30em;
+  background-color: #050000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 0.3em;
+}
+
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background-color: #a30000;
+  position: fixed;
+  bottom: 0;
+  height: 8em;
+  background-color: rgba(160, 0, 0, 0.9);
+}
+
+footer button {
+  cursor: pointer;
+  z-index: 1;
+  height: 8em;
+  background: none;
+  border: none;
+}
+
+footer button img {
+  height: 96%;
+}
+

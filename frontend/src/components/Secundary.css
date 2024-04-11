@@ -1,0 +1,71 @@
+.Secundary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(#050000, #a30000);
+  background-size: cover;
+  height: 100%;
+}
+
+.Logo {
+  margin-bottom: 2em;
+}
+
+
+.categoriaSecond {
+  background-color: black;
+  border-radius: 12.5em;
+  color: white;
+  width: 6em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(#050000, #666666);
+  font-family: sans-serif;
+  margin-top: 1em;
+  padding-top: 0.12em;
+}
+
+.tituloSecond {
+  margin-top: 1em;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+
+.descripcion {
+  color: white;
+  
+  text-align: center;
+  font-size: 1.5em;
+  margin: 2em 1em 0 1em;
+}
+
+
+.botonVolver img {
+  width: 12.5em;
+  cursor: pointer;
+  margin-top: 2em;
+}
+
+.elementoSecondImagen {
+  width: 100%;
+  height: 100%;
+}
+
+
+.elementoSecond {
+  width: 25em;
+  height: 18em;
+  border-radius: 0.9em;
+  margin-bottom: 0.5em;
+  margin-top: -1em;
+}
