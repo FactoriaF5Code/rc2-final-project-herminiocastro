@@ -19,7 +19,11 @@ header input {
 
 @font-face {
   font-family: "Benguiat";
-  src: url("/frontend//src//assets/fonts/Benguiat\ Bold.ttf") format("truetype");
+  font-family: "AvantGarde";
+  font-family: "AvantGardeCn";
+  src: url("/frontend//src/assets/fonts/Benguiat.ttf") format("truetype");
+  src: url("/frontend//src/assets/fonts/ITCAvantGardeStd-Bold.ttf") format("truetype");
+  src: url("/frontend//src/assets/fonts/ITCAvantGardeStd-BoldCn.ttf") format("truetype");
 }
 
 
@@ -28,6 +32,18 @@ header input {
   background-size: cover;
   height: 100%;
   min-height: 100vh;
+}
+
+.buscador {
+  width: 80%;
+  background-color: #FB0404;
+  border: black;
+  height: 2em;
+}
+
+::placeholder {
+  color: #ffffff;
+  font-family: "AvantGarde";
 }
 
 
@@ -75,15 +91,15 @@ header input {
   background-color: black;
   border-radius: 1.25em;
   color: white;
-  width: 6em;
+  width: 5em;
   height: 2.5em;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 4em;
-  background: linear-gradient(#050000, #666666);
-  font-family: sans-serif;
-  padding-top: 0.13em;
+  background: #FB0404;
+  font-family: "AvantGardeCn";
+  padding-top: 0.2em;
 }
 
 ::-webkit-scrollbar {
