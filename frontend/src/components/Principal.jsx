@@ -11,7 +11,7 @@ export const Principal = () => {
   const [paginaActual, setPaginaActual] = useState(1);
   const [cargando] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [categoriaActual, setCategoriaActual] = useState("Pops"); // Por defecto mostrará la categoría "Pops"
+  const [categoriaActual, setCategoriaActual] = useState("Pops");
 
   useEffect(() => {
     const fetchData = async () => {
