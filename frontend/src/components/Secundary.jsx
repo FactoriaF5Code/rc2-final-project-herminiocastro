@@ -48,7 +48,7 @@ export const Secundary = () => {
         <p>{elemento.descripcion}</p>
       </div>
       <div className="botonVolver">
-        <Link to="/Principal/*">
+        <Link to="/Principal/">
           <img
             src={BotonVolver}
             alt="Botón Volver"

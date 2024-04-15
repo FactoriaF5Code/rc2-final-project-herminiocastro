@@ -71,9 +71,9 @@ export const Principal = () => {
                   .toLowerCase()
                   .includes(searchTerm.toLowerCase()))
           )
-          .map((elemento, index) => (
-            <React.Fragment key={index}>
-              <Link to={`/secundary/${index}`} key={index}>
+          .map((elemento) => (
+            <React.Fragment key={elemento.id}>
+              <Link to={`/secundary/${elemento.id}`} key={elemento.id}>
                 <div className="elemento">
                   {elemento.imagen && (
                     <img
