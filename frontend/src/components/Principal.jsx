@@ -85,7 +85,7 @@ export const Principal = () => {
                     <p>{elemento.categoria}</p>
                   </div>
                     <h2 className="titulo">
-                      {elemento.titulo?.toLowerCase() || "Título no disponible"}
+                      {elemento.titulo || "Título no disponible"}
                     </h2>
                 </div>
               </Link>
