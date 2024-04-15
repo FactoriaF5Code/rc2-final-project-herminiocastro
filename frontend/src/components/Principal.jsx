@@ -3,10 +3,13 @@ import "./Principal.css";
 import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import Boton1 from "../assets/boton1.svg";
 import Boton2 from "../assets/boton2.svg";
+import BotonAñadir from "../assets/walkie.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Principal = () => {
+  const navigate = useNavigate();
   const [elementos, setElementos] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
   const [cargando] = useState(false);
@@ -35,6 +38,10 @@ export const Principal = () => {
     if (scrollTop + clientHeight >= scrollHeight - 100 && !cargando) {
       setPaginaActual(paginaActual + 1);
     }
+  };
+
+  const navegarFormulario = () => {
+    navigate("./creationform");
   };
 
   const filtrarElementosPorCategoria = (categoria) => {
@@ -98,6 +105,12 @@ export const Principal = () => {
           onClick={() => setCategoriaActual("POPS")}
         >
           <img src={Boton1} alt="Botón1" title="POPS" />
+        </button>
+        <button
+          className="botonAñadir"
+          onClick={() => navegarFormulario()}
+        >
+          <img src={BotonAñadir} alt="BotónAñadir" title="ADD" />
         </button>
         <button
           className="botonEggo"
