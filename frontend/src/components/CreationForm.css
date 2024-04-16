@@ -15,10 +15,10 @@ form select,
 form textarea {
     width: 80%;
     margin-bottom: 3em;
-    border-color: #ffffff;
-    border-radius: 1.25em;
+    border-radius: 1.8em;
+    border: 2px solid #ffffff;
     background-color: transparent;
-    padding: 0.6em 1em;
+    padding: 0.7em 1em;
     font-size: 1em;
     color: #ffffff;
     font-family: "Benguiat";
@@ -33,7 +33,8 @@ form button[type="submit"] {
     background-color: #a30000;
     color: #ffffff;
     border-color: #ffffff;
-    border-radius: 1.25em;
+    border-radius: 2em;
+    border: 2px solid #ffffff;
     padding: 0.8em 1em;
     font-size: 1.1em;
     font-family: "Benguiat";
@@ -58,32 +59,21 @@ form label {
     font-family: "Benguiat";
 }
 
-input[type="file"] {
-    width: 25em;
-    height: 4em;
+.file {
     cursor: pointer;
-    color: #FB0404;
+    padding: 1em 1em;
+    border: 2px solid #ffffff;
+    border-radius: 2em;
+    color: #ff0000;
+    font-size: 0.8em;
+    width: 80%;
   }
 
-  .file-input {
-    /* Hacer que el botón tenga el mismo aspecto que un botón normal */
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* Ocultar el input[type="file"] */
-  .file-input-hidden {
+  .file-label {
     display: none;
   }
+  
+  
   
   
   
