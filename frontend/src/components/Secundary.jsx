@@ -26,6 +26,18 @@ export const Secundary = () => {
     fetchData();
   }, [index]);
 
+  const handleEliminar = async () => {
+  
+    try {
+      await axios.delete(`http://localhost:8080/api/articulos/${index}`);
+      alert("Artículo eliminado con éxito!");
+      navigate("/Principal/");
+    } catch (error) {
+      console.error("Error al eliminar el artículo:", error);
+      alert("Error al eliminar el artículo. Inténtalo de nuevo.");
+    }
+  };
+
   return (
     <div className="Secundary">
       <header>
@@ -41,7 +53,7 @@ export const Secundary = () => {
         <p>{elemento.categoria}</p>
       </div>
       <div className="botonesEdicion">
-          <button onClick={() => navigate(`/Editar/${index}`)}>EDITAR</button>
+          <button onClick={() => navigate(`/secundary/${index}`)}>EDITAR</button>
           <button onClick={() => handleEliminar()}>ELIMINAR</button>
         </div>
 
@@ -65,15 +77,4 @@ export const Secundary = () => {
   );
 };
 
-const handleEliminar = async () => {
-  const { index } = useParams();
 
-  try {
-    await axios.delete(`http://localhost:8080/api/articulos/${index}`);
-    alert("Artículo eliminado con éxito!");
-    navigate("/Principal/"); // Redirect to the main page
-  } catch (error) {
-    console.error("Error al eliminar el artículo:", error);
-    alert("Error al eliminar el artículo. Inténtalo de nuevo.");
-  }
-};
