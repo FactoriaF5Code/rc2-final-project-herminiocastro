@@ -1,0 +1,59 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(#050000, #a30000);
+    padding: 1em;
+    padding-top: 4em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+form input,
+form select,
+form textarea {
+    width: 80%;
+    margin-bottom: 3em;
+    border-color: #ffffff;
+    border-radius: 1.25em;
+    background-color: transparent;
+    padding: 0.6em 1em;
+    font-size: 1em;
+    color: #ffffff;
+    font-family: "Benguiat";
+}
+
+form textarea {
+    height: 10em;
+}
+
+form button[type="submit"] {
+    width: 40%;
+    background-color: #a30000;
+    color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 1.25em;
+    padding: 0.8em 1em;
+    font-size: 1.1em;
+    font-family: "Benguiat";
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #FB0404;
+}
+
+
+form label {
+    color: #ffffff;
+    font-family: "Benguiat";
+    margin-bottom: 0.5em;
+}
+
+::placeholder {
+    color: #ffffff;
+    opacity: 0.7;
+    font-family: "Benguiat";
+}

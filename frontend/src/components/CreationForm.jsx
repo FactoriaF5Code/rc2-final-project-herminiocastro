@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "../components/CreationForm.css";
 
  export const CreationForm = () => {
   const [image, setImage] = useState(null);
