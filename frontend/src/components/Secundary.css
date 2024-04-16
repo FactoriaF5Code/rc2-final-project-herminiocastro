@@ -15,7 +15,6 @@
   margin-bottom: 2em;
 }
 
-
 .categoriaSecond {
   border-radius: 12.5em;
   color: white;
@@ -75,11 +74,11 @@
 }
 
 .botonesEdicion button {
-  background-color: black; 
+  background-color: black;
   border: none;
-  border-radius: 12.5em;  
+  border-radius: 12.5em;
   color: white;
-  width: 7em; 
+  width: 7em;
   height: 2em;
   font-family: "AvantGardeCn";
   cursor: pointer;
@@ -87,5 +86,5 @@
 }
 
 .botonesEdicion button:hover {
- background-color: #FB0404;
+  background-color: #FB0404;
 }
