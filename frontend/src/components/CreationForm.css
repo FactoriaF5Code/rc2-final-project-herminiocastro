@@ -4,7 +4,7 @@ form {
     align-items: center;
     background: linear-gradient(#050000, #a30000);
     padding: 1em;
-    padding-top: 4em;
+    padding-top: 3em;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     height: 100vh;
     overflow-y: auto;
@@ -57,3 +57,33 @@ form label {
     opacity: 0.7;
     font-family: "Benguiat";
 }
+
+input[type="file"] {
+    width: 25em;
+    height: 4em;
+    cursor: pointer;
+    color: #FB0404;
+  }
+
+  .file-input {
+    /* Hacer que el botón tenga el mismo aspecto que un botón normal */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Ocultar el input[type="file"] */
+  .file-input-hidden {
+    display: none;
+  }
+  
+  
+  
