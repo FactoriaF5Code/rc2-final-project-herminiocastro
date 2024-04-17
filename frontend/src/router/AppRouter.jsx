@@ -13,6 +13,7 @@ export const AppRouter = () => {
         <Route path="/principal/" element={<Principal />} />
         <Route path="/secundary/:index" element={<Secundary />} />
         <Route path="/principal/creationform/" element={<CreationForm />} />
+        <Route path="/editar/:index" element={<CreationForm />} />
       </Routes>
     </BrowserRouter>
   );

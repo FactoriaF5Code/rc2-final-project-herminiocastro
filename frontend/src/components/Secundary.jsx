@@ -53,7 +53,7 @@ export const Secundary = () => {
         <p>{elemento.categoria}</p>
       </div>
       <div className="botonesEdicion">
-          <button onClick={() => navigate(`/secundary/${index}`)}>EDITAR</button>
+          <button onClick={() => navigate(`/editar/${index}`)}>EDITAR</button>
           <button onClick={() => handleEliminar()}>ELIMINAR</button>
         </div>
 

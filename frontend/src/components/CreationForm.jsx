@@ -1,45 +1,66 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../components/CreationForm.css";
 
 export const CreationForm = () => {
+  const { index } = useParams();
+  const navigate = useNavigate();
+
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const navigate = useNavigate();
-  const options = [
-    { value: "POPS", label: "POPS" },
-    { value: "VARIOS", label: "VARIOS" },
-  ];
   const [categoryValue, setCategoryValue] = useState("POPS");
+
+  useEffect(() => {
+    if (index) {
+      // Si estamos en modo de edición, cargar los datos del artículo
+      const fetchArticle = async () => {
+        try {
+          const response = await axios.get(
+            `http://localhost:8080/api/articulos/${index}`
+          );
+          const { image, categoria, titulo, descripcion } = response.data;
+          setImage(image);
+          setCategoryValue(categoria);
+          setTitle(titulo);
+          setDescription(descripcion);
+        } catch (error) {
+          console.error("Error al obtener datos del artículo:", error);
+        }
+      };
+      fetchArticle();
+    }
+  }, [index]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const formData = {
       image,
-      categoryValue,
-      title,
-      description,
+      categoria: categoryValue,
+      titulo: title,
+      descripcion,
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/api/articulos/", formData);
-      if (response.status === 200) {
-        alert("¡Publicación creada con éxito!");
-        navigate("/Principal/");
+      if (index) {
+        // Si estamos en modo de edición, enviar una solicitud PUT
+        await axios.put(`http://localhost:8080/api/articulos/${index}`, formData);
+        alert("Artículo actualizado con éxito!");
       } else {
-        alert("Error al crear la publicación. Inténtalo de nuevo.");
+        // Si estamos en modo de creación, enviar una solicitud POST
+        await axios.post("http://localhost:8080/api/articulos/", formData);
+        alert("Artículo creado con éxito!");
       }
+      navigate("/Principal/");
     } catch (error) {
-      console.error(error);
-      alert("Error al crear la publicación. Comprueba la consola para más información.");
+      console.error("Error al enviar el artículo:", error);
+      alert("Error al enviar el artículo. Inténtalo de nuevo.");
     }
   };
 
-  const handleSelectedChange = async (event) => {
-    event.preventDefault();
+  const handleSelectedChange = (event) => {
     setCategoryValue(event.target.value);
   };
 
@@ -51,11 +72,8 @@ export const CreationForm = () => {
         onChange={(e) => setImage(e.target.files[0])}
       />
       <select id="select" value={categoryValue} onChange={handleSelectedChange}>
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
+        <option value="POPS">POPS</option>
+        <option value="VARIOS">VARIOS</option>
       </select>
       <input
         type="text"
@@ -68,7 +86,7 @@ export const CreationForm = () => {
         onChange={(e) => setDescription(e.target.value)}
         placeholder="Descripción"
       />
-      <button type="submit">Guardar</button>
+      <button type="submit">{index ? "Actualizar" : "Guardar"}</button>
     </form>
   );
 };
