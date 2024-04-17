@@ -40,7 +40,7 @@ export const CreationForm = () => {
       image,
       categoria: categoryValue,
       titulo: title,
-      descripcion,
+      descripcion: description,
     };
 
     try {

@@ -25,7 +25,7 @@
   justify-content: center;
   margin-bottom: 0.5rem;
   background: #FB0404;
-  font-family: "AvantGardeCn";
+  font-family: 'Benguiat';
   margin-top: 1em;
   padding-top: 0.12em;
 }
@@ -80,7 +80,7 @@
   color: white;
   width: 7em;
   height: 2em;
-  font-family: "AvantGardeCn";
+  font-family: 'Benguiat';
   cursor: pointer;
   transition: background-color 0.3s;
 }

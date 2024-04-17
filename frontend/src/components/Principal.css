@@ -43,7 +43,7 @@ header input {
 
 ::placeholder {
   color: #ffffff;
-  font-family: "AvantGarde";
+  font-family: 'Benguiat';
 }
 
 
@@ -98,7 +98,7 @@ header input {
   justify-content: center;
   margin-right: 4em;
   background: #FB0404;
-  font-family: "AvantGardeCn";
+  font-family: 'Benguiat';
   padding-top: 0.2em;
 }
 
