@@ -14,7 +14,6 @@ export const CreationForm = () => {
 
   useEffect(() => {
     if (index) {
-      // Si estamos en modo de edición, cargar los datos del artículo
       const fetchArticle = async () => {
         try {
           const response = await axios.get(
@@ -45,11 +44,12 @@ export const CreationForm = () => {
 
     try {
       if (index) {
-        // Si estamos en modo de edición, enviar una solicitud PUT
-        await axios.put(`http://localhost:8080/api/articulos/${index}`, formData);
+        await axios.put(
+          `http://localhost:8080/api/articulos/${index}`,
+          formData
+        );
         alert("Artículo actualizado con éxito!");
       } else {
-        // Si estamos en modo de creación, enviar una solicitud POST
         await axios.post("http://localhost:8080/api/articulos/", formData);
         alert("Artículo creado con éxito!");
       }
