@@ -4,6 +4,7 @@ import axios from "axios";
 import "../components/CreationForm.css";
 
 export const CreationForm = () => {
+
   const { index } = useParams();
   const navigate = useNavigate();
 
@@ -37,9 +38,12 @@ export const CreationForm = () => {
 
     const formData = new FormData();
     formData.append('image', image);
-    formData.append('categoria', categoryValue);
-    formData.append('titulo', title);
-    formData.append('descripcion', description);
+    const data = {
+      categoria: categoryValue,
+      titulo: title,
+      descripcion: description
+    };
+    formData.append('data', JSON.stringify(data));
 
     try {
       if (index) {
