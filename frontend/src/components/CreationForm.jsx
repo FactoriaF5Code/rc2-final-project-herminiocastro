@@ -36,10 +36,13 @@ export const CreationForm = () => {
     event.preventDefault();
 
     const formData = new FormData();
-    formData.append('image', image);
-    formData.append('categoria', categoryValue);
-    formData.append('titulo', title);
-    formData.append('descripcion', description);
+    const jsonData = {
+      'categoria':categoryValue,
+      'titulo': title,
+      'descripcion': description
+    }
+    formData.append('file', image);
+    formData.append('jsonData',JSON.stringify(jsonData)); 
 
     try {
       if (index) {
