@@ -37,12 +37,12 @@ export const CreationForm = () => {
 
     const formData = new FormData();
     const jsonData = {
-      'categoria':categoryValue,
-      'titulo': title,
-      'descripcion': description
-    }
-    formData.append('file', image);
-    formData.append('jsonData',JSON.stringify(jsonData)); 
+      categoria: categoryValue,
+      titulo: title,
+      descripcion: description,
+    };
+    formData.append("file", image);
+    formData.append("jsonData", JSON.stringify(jsonData));
 
     try {
       if (index) {
@@ -53,7 +53,7 @@ export const CreationForm = () => {
         alert("Artículo actualizado con éxito!");
       } else {
         await axios.post("http://localhost:8080/api/articulos/", formData, {
-          headers: { 'Content-Type': 'multipart/form-data' }
+          headers: { "Content-Type": "multipart/form-data" },
         });
         alert("Artículo creado con éxito!");
       }
@@ -63,7 +63,6 @@ export const CreationForm = () => {
       alert("Error al enviar el artículo. Inténtalo de nuevo.");
     }
   };
-
 
   const handleSelectedChange = (event) => {
     setCategoryValue(event.target.value);
@@ -95,4 +94,3 @@ export const CreationForm = () => {
     </form>
   );
 };
-

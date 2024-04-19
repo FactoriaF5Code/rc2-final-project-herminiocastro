@@ -11,10 +11,14 @@ export const Home = () => {
 
   return (
     <div className="home">
-        <img id="stranger-things-title-image" src={Logo} alt="Stranger Pops World" />
-        <button className="enter-button" onClick={handleEnterClick}>
-          ENTER
-        </button>
+      <img
+        id="stranger-things-title-image"
+        src={Logo}
+        alt="Stranger Pops World"
+      />
+      <button className="enter-button" onClick={handleEnterClick}>
+        ENTER
+      </button>
     </div>
   );
 };

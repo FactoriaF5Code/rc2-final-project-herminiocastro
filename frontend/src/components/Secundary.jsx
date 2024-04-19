@@ -4,7 +4,7 @@ import Logo from "../assets/STRANGER-POPS-WORLD-23-3-2024.png";
 import BotonVolver from "../assets/HomeImg.png";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link ,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Secundary = () => {
   const [elemento, setelemento] = useState([]);
@@ -27,7 +27,6 @@ export const Secundary = () => {
   }, [index]);
 
   const handleEliminar = async () => {
-  
     try {
       await axios.delete(`http://localhost:8080/api/articulos/${index}`);
       alert("Artículo eliminado con éxito!");
@@ -53,9 +52,9 @@ export const Secundary = () => {
         <p>{elemento.categoria}</p>
       </div>
       <div className="botonesEdicion">
-          <button onClick={() => navigate(`/editar/${index}`)}>EDITAR</button>
-          <button onClick={() => handleEliminar()}>ELIMINAR</button>
-        </div>
+        <button onClick={() => navigate(`/editar/${index}`)}>EDITAR</button>
+        <button onClick={() => handleEliminar()}>ELIMINAR</button>
+      </div>
 
       <div className="tituloSecond">
         <h2>{elemento.titulo}</h2>
@@ -66,15 +65,9 @@ export const Secundary = () => {
       </div>
       <div className="botonVolver">
         <Link to="/Principal/">
-          <img
-            src={BotonVolver}
-            alt="Botón Volver"
-            title="Volver a home"
-          />
+          <img src={BotonVolver} alt="Botón Volver" title="Volver a home" />
         </Link>
       </div>
     </div>
   );
 };
-
-

@@ -4,7 +4,6 @@ import { Principal } from "../components/Principal.jsx";
 import { Secundary } from "../components/Secundary.jsx";
 import { CreationForm } from "../components/CreationForm.jsx";
 
-
 export const AppRouter = () => {
   return (
     <BrowserRouter>

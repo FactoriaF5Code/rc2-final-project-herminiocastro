@@ -83,17 +83,14 @@ export const Principal = () => {
               <Link to={`/secundary/${elemento.id}`} key={elemento.id}>
                 <div className="elemento">
                   {elemento.imagen && (
-                    <img
-                      className="elementoImg"
-                      src={elemento.imagen}
-                    />
+                    <img className="elementoImg" src={elemento.imagen} />
                   )}
                   <div className="categoria">
                     <p>{elemento.categoria}</p>
                   </div>
-                    <h2 className="titulo">
-                      {elemento.titulo || "Título no disponible"}
-                    </h2>
+                  <h2 className="titulo">
+                    {elemento.titulo || "Título no disponible"}
+                  </h2>
                 </div>
               </Link>
             </React.Fragment>
@@ -106,10 +103,7 @@ export const Principal = () => {
         >
           <img src={Boton1} alt="Botón1" title="POPS" />
         </button>
-        <button
-          className="botonAñadir"
-          onClick={() => navegarFormulario()}
-        >
+        <button className="botonAñadir" onClick={() => navegarFormulario()}>
           <img src={BotonAñadir} alt="BotónAñadir" title="ADD" />
         </button>
         <button

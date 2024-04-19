@@ -67,13 +67,8 @@ form label {
     color: #ff0000;
     font-size: 0.8em;
     width: 80%;
-  }
+}
 
-  .file-label {
+.file-label {
     display: none;
-  }
-  
-  
-  
-  
-  
+}

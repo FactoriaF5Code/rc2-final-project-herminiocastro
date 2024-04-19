@@ -68,8 +68,8 @@ header input {
 }
 
 .elementoImg {
-  width: 98%; 
-  height: 15em; 
+  width: 98%;
+  height: 15em;
   border-radius: 0.9em;
   object-fit: cover;
   margin-bottom: 0.9em;
@@ -136,4 +136,3 @@ footer button {
 footer button img {
   height: 96%;
 }
-

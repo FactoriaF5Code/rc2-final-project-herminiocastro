@@ -41,10 +41,3 @@ test("Carga de elementos desde la API y renderizado", async () => {
   );
   expect(funkoItem).toBeInTheDocument();
 });
-
-
-
-
-
-
-  
